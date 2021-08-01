@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex: 1;
+}
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    align-self: start;
+}
+
+.nav-bar {
+    display: flex;
+}
+.searching-box {
+    display: flex;
+    align-items: center;
+}
+.switch-btn {
+    flex-wrap: nowrap;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.google-logo {
+    margin-left: 5px;
+}
+ .content {
+    margin: 0;
+ }
+.section-1 {
+    display: flex;
+    flex-direction: column;
+}
+@media screen {
+    .nav-bar,
+    .searching-box,
+    .switch-btn{
+        display: none;
+    }
+    .searching-btn-2 {
+        border:none ;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+    }
+    .fa-search,
+    .fa-cog {
+        margin:0 15px ;
+    }
+    .banner {
+        text-align: left;
+    }
+
+    
+}
+@media (min-width:600px){
+    .switch-btn {
+        display: block;
+    }
+    .content {
+        display: flex;
+        align-items: center;
+    }
+    .s2-img {
+        height: auto;
+        max-width: 100%;
+    }
+    .section-1 {
+        flex: 1.3;
+    }
+    .section-2 {
+        flex: 1.2;
+        order: 1;
+    }
+    .banner {
+        text-align: center;
+    }
+    
+}
+
+@media (min-width:840px){
+    
+    .searching-box {
+        display: inherit;
+    }
+    .searching-btn-2 {
+        display: none;
+    }
+    .nav-bar {
+        display: inherit;
+        
+    }
+}
+
+
