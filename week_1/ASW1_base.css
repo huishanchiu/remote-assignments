@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #FFFFE0;
+  }
+
+  h1,
+  h2,
+  h3 {
+      margin: 0;
+  }
+.main-content {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.main-header {
+    background-color:#D3D3D3;
+    color: #778899;
+    margin: 0 ;
+    padding: 1em;
+}
+.item {
+    color: #778899;
+    text-decoration: none;
+}
+.nav-bar {
+    color: #778899;
+}
+/*section*/
+.col {
+    padding: 1em;
+    background-color: rgb(207, 131, 131);
+    margin: 0.5em;
+}
+
+.main-footer {
+    background-color:#D3D3D3;
+    color: #778899;
+    padding: 1em;
+}
+
