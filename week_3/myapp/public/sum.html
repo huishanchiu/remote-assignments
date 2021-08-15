@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+   
+</head>
+<body>
+    <button onclick="getSum()">按我得到終極密碼</button>
+    <div>
+        <form action="" method="get">
+        <input type="text"  class = "input">
+        <button type="submit" class = "sumBtn" onclick="getSum2()" >Get sum</button>
+        <p class = "answer">answer</p>
+        </form>
+    </div>
+    <script>
+           
+        function getSum(){
+            let req = new XMLHttpRequest();
+            req.open('GET','http://localhost:3000/getData?number=10');
+            req.onload = function(){
+                alert(this.responseText);
+            };
+            req.send();
+        };
+
+        function getSum2(){
+            event.preventDefault();
+            const inputValue = document.querySelector('.input').value;
+            const req2 = new XMLHttpRequest();
+            req2.onreadystatechange = function(){
+                if(req2.readyState === 4 && req2.status ===200){
+                    document.querySelector('.answer').innerHTML = req2.responseText;
+                }
+            }
+            req2.open('get',`http://localhost:3000/getData?number=${inputValue}`, true);
+            req2.send();
+        }
+
+        
+             
+    </script>
+</body>
+</html>
