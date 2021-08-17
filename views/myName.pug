@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+  head
+    title My Name
+  body
+    header
+        h1 My Name
+    form(action='/myName', method='post')
+            label Please type your name:
+                input(type="text", name = "username")
+            button(type="submit") Submit
