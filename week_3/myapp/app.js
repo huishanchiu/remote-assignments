@@ -7,10 +7,6 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
-
-
-
 app.use("/getData", dataRoutes);
 app.use(express.static(__dirname + '/public'));
 
