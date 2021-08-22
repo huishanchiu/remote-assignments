@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W4 ProductInfo</title>
+  </head>
+  <body>
+    <ul class="content"></ul>
+    <script>
+      function ajax(src, callback) {
+        // your code here
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(xhr.responseText);
+          }
+        };
+        xhr.open("get", src, true);
+        xhr.send();
+      }
+
+      function render(data) {
+        let content = document.querySelector(".content");
+        let productInfo = JSON.parse(data);
+        for (i = 0; i < productInfo.length; i++) {
+          let products = document.createElement("div");
+          let nameBul = document.createElement("li");
+          let priceBul = document.createElement("li");
+          let desBul = document.createElement("li");
+          let name = document.createTextNode(`name: ${productInfo[i].name}`);
+          let price = document.createTextNode(`price: ${productInfo[i].price}`);
+          let des = document.createTextNode(
+            `description: ${productInfo[i].description}`
+          );
+
+          nameBul.appendChild(name);
+          priceBul.appendChild(price);
+          desBul.appendChild(des);
+
+          products.appendChild(nameBul);
+          products.appendChild(priceBul);
+          products.appendChild(desBul);
+
+          content.appendChild(products);
+        }
+      }
+      ajax(
+        "http://13.230.176.178:4000/api/1.0/remote-w4-data",
+        function (response) {
+          render(response);
+        }
+      ); // you should get product information in JSON format and render data in the page
+    </script>
+  </body>
+</html>
